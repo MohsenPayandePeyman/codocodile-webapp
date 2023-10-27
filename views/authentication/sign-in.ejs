@@ -1,0 +1,13 @@
+<%- include('head-template'); %>
+<form action="" method="post" class="needs-validation" id="theForm">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control shadow" id="floatingInput" required>
+        <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control shadow" id="floatingPassword" required>
+        <label for="floatingPassword">Password</label>
+    </div>
+    <button onclick="validateForm()" type="submit" class="btn btn-primary">Sign In</button>
+</form>
+<%- include('foot-template'); %>
