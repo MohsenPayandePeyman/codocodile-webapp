@@ -24,7 +24,7 @@ exports.sign_in_post = (req, res) => {
       console.error("Error:", error);
     }
   }
-  
+  console.log(req.body);
   const data = { username: req.body.username, password: req.body.password };
   postJSON(data);
 
@@ -63,6 +63,7 @@ exports.sign_up_post = (req, res) => {
       const result = await response.json();
       if (result.message == 'OK') {
         req.session.username = req.body.username;
+        res.redirect('/main');
       } else {
         res.render('authentication/sign-up', {title: 'Sign Up', error: 'the entered username or password is incorrect'});
       }

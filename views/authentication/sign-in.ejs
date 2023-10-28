@@ -1,11 +1,11 @@
 <%- include('head-template'); %>
 <form action="" method="post" class="needs-validation" id="theForm">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control shadow" id="floatingInput" required>
+        <input type="text" class="form-control shadow" name="username" id="floatingInput" required>
         <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="password" class="form-control shadow" id="floatingPassword" required>
+        <input type="password" class="form-control shadow" name="password" id="floatingPassword" required>
         <label for="floatingPassword">Password</label>
     </div>
     <button onclick="validateForm()" type="submit" class="btn btn-primary">Sign In</button>
