@@ -1,0 +1,27 @@
+<%- include('head-template'); %>
+<form action="" method="post" class="needs-validation mb-3" id="theForm">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control shadow" id="floatingInput" required>
+        <label for="floatingInput">Name</label>
+        <div class="invalid-feedback">
+            This field cannot be empty
+        </div>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control shadow" id="floatingInput" required>
+        <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control shadow" id="floatingInput" required>
+        <label for="floatingInput">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control shadow" id="floatingPassword" required>
+        <label for="floatingPassword">Password</label>
+    </div>
+    <button onclick="validateForm()" type="submit" class="btn btn-primary shadow">Sign Up</button>
+</form>
+<a type="button" class="btn btn-danger shadow">
+    Forgot Password
+</a>
+<%- include('foot-template'); %>

@@ -1,0 +1,46 @@
+<%- include('head-template'); %>
+<div class="mx-5 my-5">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        
+        <div class="col-sm">
+            <%var i=1%>
+            <%posts.forEach(post => {%>
+            <div class="card mb-4 shadow" style="width: 100%;">
+                <img class="card-img-top" src="<%=post.media_link%>" alt="Card image cap">
+                <p class="author font-weight-bold mx-2 my-1"><%=post.username%> <span
+                        class="badge rounded-pill bg-warning"><%=post.avg_rate%></span></p>
+                <hr>
+                <div class="card-body mx-0 text-center">
+                    <h5 class="card-title my-3"><%=post.caption%></h5>
+                    <hr>
+                    <div class="d-flex justify-content-center">
+                        <div class="rate d-inline">
+                            <input type="radio" id="star<%=i+4%>" name="rate|||<%=post.id%>" value="5" />
+                            <label for="star<%=i+4%>" title="text">5 stars</label>
+                            <input type="radio" id="star<%=i+3%>" name="rate|||<%=post.id%>" value="4" />
+                            <label for="star<%=i+3%>" title="text">4 stars</label>
+                            <input type="radio" id="star<%=i+2%>" name="rate|||<%=post.id%>" value="3" checked/>
+                            <label for="star<%=i+2%>" title="text">3 stars</label>
+                            <input type="radio" id="star<%=i+1%>" name="rate|||<%=post.id%>" value="2" />
+                            <label for="star<%=i+1%>" title="text">2 stars</label>
+                            <input type="radio" id="star<%=i%>" name="rate|||<%=post.id%>" value="1" />
+                            <label for="star<%=i%>" title="text">1 star</label>
+                        </div>
+                        <div class="avg-rate d-inline">
+                            <!-- <p class="fs-5">3.5<span style="font-size: 15px; margin-left: 2px;">35</span></p> -->
+                            <p class="fs-5"><%=post.user_rate%></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%i+=5%>
+            <%})%>
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+</div>
+<script src="/javascripts/ajax-rate.js"></script>
+<%- include('foot-template'); %>
